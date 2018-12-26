@@ -8,7 +8,7 @@ storage:
   dbPath: /var/lib/mongodb
   journal:
     enabled: true
-#  engine:
+  engine: mmapv1
 #  mmapv1:
 #  wiredTiger:
 
@@ -27,6 +27,7 @@ net:
 #processManagement:
 
 #security:
+#  authorization: enabled
 
 #operationProfiling:
 

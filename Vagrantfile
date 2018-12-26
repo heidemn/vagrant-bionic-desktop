@@ -21,7 +21,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "install-docker.sh"
   config.vm.provision "shell", path: "install-node.sh"
   config.vm.provision "shell", path: "install-apache-php.sh"
+
+  config.vm.provision "file", source: "etc_mongod.conf.no-auth", destination: "/tmp/mongod.conf.no-auth"
+  config.vm.provision "file", source: "etc_mongod.conf.auth",    destination: "/tmp/mongod.conf.auth"
   config.vm.provision "shell", path: "install-mongodb.sh"
+
   config.vm.provision "shell", path: "install-mysql.sh"
   config.vm.provision "shell", path: "install-awscli.sh"
 end

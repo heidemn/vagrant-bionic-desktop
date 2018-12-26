@@ -11,6 +11,9 @@ If you aren't using VirtualBox, or if you're fine with the default disk size of 
 - Skip the plugin installation.
 - Remove the `config.disksize...` line from the Vagrantfile.
 
+The keyboard layout is set to German.
+To change this, edit `install-desktop.sh`, and replace `L='de'` with your preferred keyboard layout language.
+
 ## How to run it
 
 ```
@@ -21,4 +24,4 @@ vagrant reload
 ```
 
 After the reboot, the VM screen should show the LightDM login screen.
-Log in as user "vagrant", password "vagrant".
+Log in as user "ubuntu", password "ubuntu".
