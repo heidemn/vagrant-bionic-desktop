@@ -4,7 +4,7 @@ set -ex
 #
 # VS Code
 #
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+curl -s https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 
@@ -25,4 +25,9 @@ sudo apt-get install -y sublime-text
 #
 # Netbeans
 #
-sudo apt-get install -y netbeans
+# Netbeans 7.1
+#sudo apt-get install -y netbeans
+# Netbeans 7.2 interactive installer, for manual installation
+NB_INSTALLER=/opt/netbeans-8.2-php-linux-x64.sh
+wget --no-verbose -O $NB_INSTALLER https://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh
+sudo chmod +x $NB_INSTALLER

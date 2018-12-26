@@ -19,3 +19,6 @@ sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-utils virtu
 sudo apt-get install -y lightdm lightdm-gtk-greeter
 # Optional: Install a more feature-rich applications menu
 sudo apt-get install -y xfce4-whiskermenu-plugin
+
+# Use German keyboard layout
+L='de' && sudo sed -i 's/XKBLAYOUT=\"\w*"/XKBLAYOUT=\"'$L'\"/g' /etc/default/keyboard

@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.memory = 2048
     vb.cpus = 2
+    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
   # config.vm.provision "shell", inline: <<-SCRIPT
@@ -20,6 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "install-docker.sh"
   config.vm.provision "shell", path: "install-node.sh"
   config.vm.provision "shell", path: "install-apache-php.sh"
+  config.vm.provision "shell", path: "install-mongodb.sh"
   config.vm.provision "shell", path: "install-mysql.sh"
   config.vm.provision "shell", path: "install-awscli.sh"
 end
