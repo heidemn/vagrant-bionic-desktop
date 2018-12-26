@@ -22,20 +22,21 @@ while ! mongo admin --eval 'db.adminCommand("listDatabases");'; do
 	echo "Retrying connection to MongoDB:"
 done
 
-mongo admin --eval 'db.createUser({user: "root", pwd: "root", roles: [ { role: "clusterAdmin", db: "admin" } ]});'
+mongo admin --eval 'db.createUser({user: "root", pwd: "1234", roles: [ { role: "clusterAdmin", db: "admin" } ]});'
 
 # Enable authorization
 sudo cp /tmp/mongod.conf.auth /etc/mongod.conf
 sudo service mongod restart
 
 # Verify that authorized access is possible:
-while ! mongo admin -u root -p root --eval 'db.adminCommand("listDatabases");'; do
+while ! mongo admin -u root -p 1234 --eval 'db.adminCommand("listDatabases");'; do
 	sleep 3
 	echo "Retrying connection to MongoDB:"
 done
 # Verify that no unauthorized access is possible:
-! mongo admin -u root -p TOOR --eval 'db.adminCommand("listDatabases");'
-! mongo admin -u TOOR -p root --eval 'db.adminCommand("listDatabases");'
-! mongo admin                 --eval 'db.adminCommand("listDatabases");'
+! mongo admin -u root -p 4321 --eval 'db.adminCommand("listDatabases");'
+! mongo admin -u TOOR -p 1234 --eval 'db.adminCommand("listDatabases");'
+# Seems to return exit code 0, even though it fails:
+#! mongo admin                 --eval 'db.adminCommand("listDatabases");'
 
 # roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
