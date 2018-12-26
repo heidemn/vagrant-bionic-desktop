@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
   # SCRIPT
 
   config.vm.provision "shell", path: "install-desktop.sh"
+  config.vm.provision "shell", path: "install-chrome.sh"
   config.vm.provision "shell", path: "install-ide.sh"
 
   config.vm.provision "shell", path: "install-docker.sh"
@@ -27,5 +28,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "install-mongodb.sh"
 
   config.vm.provision "shell", path: "install-mysql.sh"
+
   config.vm.provision "shell", path: "install-awscli.sh"
 end

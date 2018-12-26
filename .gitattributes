@@ -1,0 +1,2 @@
+# Use Linux line endings, since we're building a Linux VM.
+* text eol=lf
