@@ -1,6 +1,9 @@
 #!/bin/sh
 set -ex
 
+# Set password for default "ubuntu" user
+echo "ubuntu:ubuntu" | sudo chpasswd
+
 # https://askubuntu.com/questions/1067929/on-18-04-package-virtualbox-guest-utils-does-not-exist
 sudo apt-add-repository multiverse
 sudo apt-get update

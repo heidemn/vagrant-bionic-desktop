@@ -1,4 +1,5 @@
 #!/bin/sh
+set -ex
 
 #
 # VS Code
