@@ -15,6 +15,8 @@ sudo apt-get install -y \
 	php-apcu \
 	php-curl \
 	php-imagick \
+	php-memcached \
+	php-mongodb \
 	php-mysql \
 	php-xdebug \
 

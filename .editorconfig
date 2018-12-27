@@ -1,0 +1,15 @@
+# top-most EditorConfig file
+root = true
+
+# LF is consistent with .gitattributes
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[Vagrantfile]
+indent_style = space
+indent_size = 2
+
+[*.sh]
+indent_style = tab
+indent_size = 4
