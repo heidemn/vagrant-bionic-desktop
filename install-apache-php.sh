@@ -20,7 +20,8 @@ sudo apt-get install -y \
 	php-mysql \
 	php-xdebug \
 
-curl -sS https://getcomposer.org/installer | \
-	php -- --install-dir=/usr/local/bin --filename=composer
+if [ ! -f /usr/local/bin/composer ]; then
+	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+fi
 
 echo '<?php phpinfo();' | sudo tee /var/www/html/phpinfo.php

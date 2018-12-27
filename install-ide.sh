@@ -25,13 +25,15 @@ sudo apt-get install -y sublime-text
 #
 # Netbeans
 #
-# Netbeans 7.1
+# Netbeans 8.1
 #sudo apt-get install -y netbeans
-# Netbeans 7.2 interactive installer, for manual installation
-NB_INSTALLER=/tmp/netbeans-8.2-php-linux-x64.sh
-NB_TEMP=/tmp/netbeans-install
-wget --no-verbose -O $NB_INSTALLER https://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh
-sudo chmod +x $NB_INSTALLER
+# Netbeans 8.2 installer (large download, so check if already installed).
+if [ ! -d "/usr/local/netbeans-8.2/" ]; then
+	NB_INSTALLER=/tmp/netbeans-8.2-php-linux-x64.sh
+	NB_TEMP=/tmp/netbeans-install
+	wget --no-verbose -O $NB_INSTALLER https://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh
+	sudo chmod +x $NB_INSTALLER
 
-mkdir -p $NB_TEMP
-sudo $NB_INSTALLER --tempdir $NB_TEMP --nospacecheck --silent
+	mkdir -p $NB_TEMP
+	sudo $NB_INSTALLER --tempdir $NB_TEMP --nospacecheck --silent
+fi

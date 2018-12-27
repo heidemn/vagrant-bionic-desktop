@@ -19,9 +19,19 @@ To change this, edit `install-desktop.sh`, and replace `L='de'` with your prefer
 ```
 vagrant plugin install vagrant-disksize
 
-vagrant up
+vagrant up 2>&1 | tee log.txt
 vagrant reload
 ```
 
 After the reboot, the VM screen should show the LightDM login screen.
 Log in as user "ubuntu", password "ubuntu".
+
+Re-running the provisioners:
+
+```
+# When VM is running:
+vagrant provision 2>&1 | tee log.txt
+
+# When VM is powered off:
+vagrant up --provision 2>&1 | tee log.txt
+```
