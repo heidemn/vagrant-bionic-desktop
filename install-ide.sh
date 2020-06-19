@@ -25,13 +25,27 @@ sudo apt-get install -y sublime-text
 #
 # Netbeans
 #
-# Netbeans 8.1
+# Netbeans 8.1 (bionic) / 10.0 (focal)
 #sudo apt-get install -y netbeans
+
 # Netbeans 8.2 installer (large download, so check if already installed).
-if [ ! -d "/usr/local/netbeans-8.2/" ]; then
-	NB_INSTALLER=/tmp/netbeans-8.2-php-linux-x64.sh
+# Was used for bionic.
+# if [ ! -d "/usr/local/netbeans-8.2/" ]; then
+# 	NB_INSTALLER=/tmp/netbeans-8.2-php-linux-x64.sh
+# 	NB_TEMP=/tmp/netbeans-install
+# 	wget --no-verbose -O $NB_INSTALLER https://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh
+# 	sudo chmod +x $NB_INSTALLER
+#
+# 	mkdir -p $NB_TEMP
+# 	sudo $NB_INSTALLER --tempdir $NB_TEMP --nospacecheck --silent
+# fi
+
+# Netbeans 12
+if [ ! -d "/usr/local/netbeans-12.0/" ]; then
+	NB_INSTALLER=/tmp/netbeans-12.0-php-linux-x64.sh
 	NB_TEMP=/tmp/netbeans-install
-	wget --no-verbose -O $NB_INSTALLER https://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-php-linux-x64.sh
+	# Was used in 18.04:
+	wget --no-verbose -O $NB_INSTALLER https://www.apache.org/dyn/closer.cgi/netbeans/netbeans/12.0/Apache-NetBeans-12.0-bin-linux-x64.sh
 	sudo chmod +x $NB_INSTALLER
 
 	mkdir -p $NB_TEMP

@@ -4,6 +4,7 @@ set -ex
 #
 # MySQL
 #
+# bionic: 5.7 / focal: 8.0
 sudo apt-get install -y mysql-client mysql-server
 
 # Guard against multiple executions.

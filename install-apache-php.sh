@@ -18,7 +18,7 @@ sudo apt-get install -y \
 	php-memcached \
 	php-mongodb \
 	php-mysql \
-	php-xdebug \
+	php-xdebug
 
 if [ ! -f /usr/local/bin/composer ]; then
 	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

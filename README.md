@@ -1,4 +1,7 @@
-# Ubuntu 18.04 LTS desktop box (for Vagrant)
+# Ubuntu 18.04 LTS developer desktop box (for Vagrant)
+
+New: Ubuntu 20.04 LTS -> `Vagrantfile`
+Old: Ubuntu 18.04 LTS -> `Vagrantfile.bionic`  
 
 Based on [my answer](https://stackoverflow.com/questions/18878117/using-vagrant-to-run-virtual-machines-with-desktop-environment/53363591#53363591) to a StackOverflow question (which is itself based on the other answers).
 
